@@ -6,8 +6,9 @@ Built with Python, scikit-learn, pandas, Plotly, and Streamlit.
 
 > This project goes beyond predicting churn. It connects model output to customer segments, recommended actions, simulated treatment uplift, campaign cost, expected net gain, and deployment decisions.
 
-🚀 **[Live Demo]((https://deeptib24-customer-retention-intelligence-p-dashboardapp-yfvecn.streamlit.app/))** 
+🚀 **[Live Demo](https://deeptib24-customer-retention-intelligence-p-dashboardapp-yfvecn.streamlit.app/)** 
 ---
+
 
 ## Dashboard Preview
 
