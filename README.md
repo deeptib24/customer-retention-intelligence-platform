@@ -8,12 +8,11 @@ Built with Python, scikit-learn, pandas, Plotly, and Streamlit.
 
 ## Dashboard Preview
 
-> **Screenshot slot:** Executive dashboard  
-> Add `assets/images/executive-dashboard.png`, then uncomment the image line below.
+> Executive dashboard  
 
-<!-- ![Customer Retention Intelligence Platform executive dashboard](assets/images/executive-dashboard.png) -->
+![Customer Retention Intelligence Platform executive dashboard](assets/images/executive-dashboard.png)
 
-Recommended screenshot: the executive overview showing churn risk, retention lift, business-impact KPIs, and segment-level net gain.
+
 
 ## Business Problem
 
@@ -24,6 +23,17 @@ A churn probability alone does not tell a retention team what to do next. The pl
 3. Which customer segment does the customer belong to?
 4. Which retention intervention should be used?
 5. Is the expected retention value greater than the campaign cost?
+
+
+## Project Architecture
+
+The platform separates predictive modeling from the retention decision layer. Saved churn and segmentation models enrich customer data in memory before the strategy, experimentation, and ROI components generate dashboard outputs.
+
+> **Diagram slot:** Project architecture  
+> Add `assets/images/project-architecture.png`, then uncomment the image line below.
+
+<!-- ![Customer Retention Intelligence Platform architecture](assets/images/project-architecture.png) -->
+
 
 ## Platform Highlights
 
@@ -55,12 +65,9 @@ The dashboard provides two complementary explanation layers:
 - **Global feature importance:** shows which variables have the greatest influence across the RandomForest model.
 - **Customer-level risk drivers:** compares an active customer profile with the portfolio and surfaces plain-language signals such as high inactivity, high friction, low loyalty, or high cart abandonment.
 
-> **Screenshot slot:** Churn explainability  
-> Add `assets/images/churn-explainability.png`, then uncomment the image line below.
+> Churn explainability  
 
-<!-- ![Customer-level churn explanation and recommended intervention](assets/images/churn-explainability.png) -->
-
-Recommended screenshot: a high-risk customer showing churn probability, segment, top risk drivers, and the recommended intervention.
+![Customer-level churn explanation and recommended intervention](assets/images/churn-explainability.png)
 
 ## Retention Decision Layer
 
@@ -81,43 +88,11 @@ Net gain            = Revenue saved - Campaign cost
 ROI                 = Net gain / Campaign cost
 ```
 
-> **Screenshot slot:** Retention experiments  
-> Add `assets/images/retention-experiments.png`, then uncomment the image line below.
+> Retention experiments  
 
-<!-- ![Retention uplift and campaign ROI analysis](assets/images/retention-experiments.png) -->
+![Retention uplift and campaign ROI analysis](assets/images/retention-experiments.png)
 
-Recommended screenshot: the experimentation page showing control vs treatment retention, campaign economics, and deployment recommendations.
 
-## Project Architecture
-
-The platform separates predictive modeling from the retention decision layer. Saved churn and segmentation models enrich customer data in memory before the strategy, experimentation, and ROI components generate dashboard outputs.
-
-```text
-Customer Data
-     |
-     +--> Feature Engineering
-              |
-              +--> Customer Segmentation
-              |
-              +--> Churn Prediction
-                        |
-                        +--> Risk Explanation
-                        |
-                        +--> Retention Strategy Assignment
-                                      |
-                                      +--> Treatment Uplift Simulation
-                                                    |
-                                                    +--> ROI Analysis
-                                                              |
-                                                              +--> Streamlit Dashboard
-```
-
-> **Diagram slot:** Project architecture  
-> Add `assets/images/project-architecture.png`, then uncomment the image line below.
-
-<!-- ![Customer Retention Intelligence Platform architecture](assets/images/project-architecture.png) -->
-
-The detailed architecture and enriched data model are documented in [`RETENTION_PLATFORM_ARCHITECTURE.md`](RETENTION_PLATFORM_ARCHITECTURE.md).
 
 ## Dashboard Pages
 
@@ -129,12 +104,9 @@ The detailed architecture and enriched data model are documented in [`RETENTION_
 | Recommendations | Customer-level intervention details and expected business impact |
 | Experiments | Simulated uplift, campaign cost, net gain, ROI, and deployment decisions |
 
-> **Screenshot slot:** Customer segments  
-> Add `assets/images/customer-segments.png`, then uncomment the image line below.
+> Customer segments  
 
-<!-- ![Customer segment risk and value analysis](assets/images/customer-segments.png) -->
-
-Recommended screenshot: the segment risk-versus-value view and segment metrics table.
+![Customer segment risk and value analysis](assets/images/customer-segments.png)
 
 ## Repository Structure
 
@@ -192,8 +164,8 @@ streamlit run dashboard/app.py
 - Track data drift, model drift, and campaign performance over time.
 - Add batch customer export and campaign activation integrations.
 
-## Supporting Documentation
+## Author
+Deepti Bhardwaj
+IIT Delhi
 
-- [`RETENTION_PLATFORM_ARCHITECTURE.md`](RETENTION_PLATFORM_ARCHITECTURE.md): system architecture, enriched data model, strategy assignment, and experimentation design.
-- [`notebooks/03churn_prediction.ipynb`](notebooks/03churn_prediction.ipynb): churn model training and evaluation.
-- [`notebooks/04experim_engine.ipynb`](notebooks/04experim_engine.ipynb): experimentation workflow.
+

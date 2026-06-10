@@ -52,8 +52,8 @@ display_cols = [
     "Segment",
     "Recommended_Intervention",
     "Segment_Size",
-    "Baseline_Retention",
-    "Expected Retention After Campaign",
+    "Control_Retention",
+    "Treatment_Retention",
     "Expected_Uplift",
     "Customers_Retained",
     "Revenue_Saved",
@@ -63,10 +63,17 @@ display_cols = [
     "Decision",
 ]
 
+display_df = experiment_df[display_cols].rename(
+    columns={
+        "Control_Retention": "Baseline Retention",
+        "Treatment_Retention": "Expected Retention After Campaign",
+    }
+)
+
 st.dataframe(
-    experiment_df[display_cols].style.format(
+    display_df.style.format(
         {
-            "Baseline_Retention": "{:.1%}",
+            "Baseline Retention": "{:.1%}",
             "Expected Retention After Campaign": "{:.1%}",
             "Expected_Uplift": "{:.1%}",
             "Customers_Retained": "{:.0f}",
