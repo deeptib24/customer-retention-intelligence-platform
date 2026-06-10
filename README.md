@@ -29,10 +29,10 @@ A churn probability alone does not tell a retention team what to do next. The pl
 
 The platform separates predictive modeling from the retention decision layer. Saved churn and segmentation models enrich customer data in memory before the strategy, experimentation, and ROI components generate dashboard outputs.
 
-> **Diagram slot:** Project architecture  
-> Add `assets/images/project-architecture.png`, then uncomment the image line below.
+> Project architecture  
 
-<!-- ![Customer Retention Intelligence Platform architecture](assets/images/project-architecture.png) -->
+
+![Customer Retention Intelligence Platform architecture](assets/images/project-architecture.png)
 
 
 ## Platform Highlights
